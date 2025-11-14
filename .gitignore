@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+client/node_modules/
+server/node_modules/
+
+#Environement files
+server/.env
+client/.env.local
+
+#Build 
+build/
+dist/
+
+#OS
+.DS_Store
+Thumbs.db
