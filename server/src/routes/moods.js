@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body } from "express-validator";
-import { createMood, getMoods, updateMood, deleteMood } from '../controllers/moodController.js';
+import { createMood, getMoods, updateMood, deleteMood, getMood } from '../controllers/moodController.js';
 import { protect } from '../middlewares/auth.js';
 
 const router = Router();
@@ -18,7 +18,7 @@ router.post(
 );
 
 router.get('/', protect, getMoods);
-
+router.get('/:id', protect, getMood);
 router.put('/:id', protect, updateMood);
 router.delete('/:id', protect, deleteMood);
 

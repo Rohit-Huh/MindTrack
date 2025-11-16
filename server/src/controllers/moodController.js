@@ -33,6 +33,18 @@ export async function getMoods(req, res) {
     }
 }
 
+export async function getMood(req, res) {
+    try {
+        const { id } = req.params;
+        const mood = await Mood.findOne({ _id: id, user: req.user._id });
+        if (!mood) return res.status(404).json({ success: false, msg: 'Mood not found' });
+        res.json({ success: true, mood });
+    } catch (err) {
+        console.error('getMood error:', err);
+        res.status(500).json({ success: false, msg: 'Server error' });
+    }
+}
+
 export async function updateMood(req, res) {
     try {
         const { id } = req.params;
