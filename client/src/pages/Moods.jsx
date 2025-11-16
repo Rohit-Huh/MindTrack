@@ -44,7 +44,7 @@ export default function Moods() {
         <div style={{ padding: 24 }}>
             <h2>Moods</h2>
             <div style={{ marginBottom: 12 }}>
-                <Link to='/moods/add'>+Add Mood</Link> | <Link to="/dashboard">Back</Link>
+                <Link to='/moods/add'>+ Add Mood</Link> | <Link to="/dashboard">Back</Link>
             </div>
 
             {loading && <div>Loading...</div>}
@@ -62,6 +62,7 @@ export default function Moods() {
                                 <div style={{ fontSize: 12, opacity: 0.7 }}>{new Date(m.date).toLocaleString()}</div>
                             </div>
                             <div>
+                                <Link to={`/moods/edit/${m._id}`} style={{ marginRight: 8 }}><button>Edit</button></Link>
                                 <button onClick={() => handleDelete(m._id)} style={{ marginLeft: 8 }}>Delete</button>
                             </div>
                         </div>

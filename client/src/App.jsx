@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from "./components/ProtectedRoute";
 import Moods from './pages/Moods';
 import AddMood from './pages/AddMood';
+import EditMood from './pages/EditMood';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           } />
           <Route path="/moods" element={<ProtectedRoute><Moods /></ ProtectedRoute>} />
           <Route path="/moods/add" element={<ProtectedRoute><AddMood /></ProtectedRoute>} />
+          <Route path="/moods/edit/:id" element={<ProtectedRoute><EditMood /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
