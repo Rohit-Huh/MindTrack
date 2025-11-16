@@ -5,6 +5,7 @@ server/node_modules/
 
 #Environement files
 server/.env
+client/.env
 client/.env.local
 
 #Build 
