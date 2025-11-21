@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body } from "express-validator";
-import { createHabit, getHabits, updateHabit, deleteHabit } from '../controllers/habitController.js';
+import { createHabit, getHabits, getHabit, updateHabit, deleteHabit } from '../controllers/habitController.js';
 import { protect } from '../middlewares/auth.js';
 
 const router = Router();
@@ -18,6 +18,7 @@ router.post(
 );
 
 router.get('/', protect, getHabits);
+router.get('/:id', protect, getHabit);
 router.put('/:id', protect, updateHabit);
 router.delete('/:id', protect, deleteHabit);
 

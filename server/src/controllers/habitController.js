@@ -29,6 +29,18 @@ export async function getHabits(req, res) {
     }
 }
 
+export async function getHabit(req, res) {
+    try {
+        const { id } = req.params;
+        const habit = await Habit.findOne({ _id: id, user: req.user._id });
+        if (!habit) return res.status(404).json({ success: false, msg: 'Habit not found' });
+        res.json({ success: true, habit });
+    } catch (err) {
+        console.error('getHabit error:', err);
+        res.status(500).json({ success: false, msg: 'Server error' });
+    }
+}
+
 export async function updateHabit(req, res) {
     try {
         const { id } = req.params;
