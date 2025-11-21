@@ -1,0 +1,53 @@
+.ctn-spinner {
+    width: 100%;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.08);
+    border-top: 4px solid rgba(59, 130, 246, 1);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.skeleton-card {
+    background: linear-gradient(180deg, #f6f7f9, #f3f4f6);
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skeleton-header {
+    height: 18px;
+    width: 40%;
+    background: linear-gradient(90deg, #e9ecef, #f6f7f9, #e9ecef);
+    background-size: 200% 100%;
+    animation: pulse 1.6s linear infinite;
+    border-radius: 6px;
+}
+
+.skeleton-body {
+    flex: 1;
+    background: linear-gradient(90deg, #e9ecef, #f6f7f9, #e9ecef);
+    background-size: 200% 100%;
+    animation: pulse 1.6s linear infinite;
+    border-radius: 6px;
+}
+
+@keyframes pulse {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
